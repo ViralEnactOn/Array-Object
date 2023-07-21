@@ -196,16 +196,110 @@
 // console.log(descriptors1.property1.value)
 // // Expected output: 42
 
-// Object.hasOwn()
-const object1 = {
-  prop: 'exists'
-}
+// // Object.hasOwn()
+// const object1 = {
+//   prop: 'exists'
+// }
 
-console.log(Object.hasOwn(object1, 'prop'))
-// Expected output: true
+// console.log(Object.hasOwn(object1, 'prop'))
+// // Expected output: true
 
-console.log(Object.hasOwn(object1, 'toString'))
-// Expected output: false
+// console.log(Object.hasOwn(object1, 'toString'))
+// // Expected output: false
 
-console.log(Object.hasOwn(object1, 'undeclaredPropertyValue'))
-// Expected output: false
+// console.log(Object.hasOwn(object1, 'undeclaredPropertyValue'))
+// // Expected output: false
+
+// // Object.prototype.hasOwnProperty()
+// const object1 = {}
+// object1.property1 = 42
+
+// console.log(object1.hasOwnProperty('property1'))
+// // Expected output: true
+
+// console.log(object1.hasOwnProperty('toString'))
+// // Expected output: false
+
+// console.log(object1.hasOwnProperty('hasOwnProperty'))
+// // Expected output: false
+
+// // Object.is()
+// console.log(Object.is('1', 1))
+// // Expected output: false
+
+// console.log(Object.is(NaN, NaN))
+// // Expected output: true
+
+// console.log(Object.is(-0, 0))
+// // Expected output: false
+
+// const obj = {}
+// console.log(Object.is(obj, {}))
+// // Expected output: false
+
+// // Object.isFrozen()
+// const object1 = {
+//   property1: 42
+// }
+
+// console.log(Object.isFrozen(object1))
+// // Expected output: false
+
+// Object.freeze(object1)
+
+// console.log(Object.isFrozen(object1))
+// // Expected output: true
+
+// // Object.isSealed()
+// const object1 = {
+//   property1: 42
+// }
+
+// console.log(Object.isSealed(object1))
+// // Expected output: false
+
+// Object.seal(object1)
+
+// console.log(Object.isSealed(object1))
+// // Expected output: true
+
+// // Object.keys()
+// const object1 = {
+//   a: 'somestring',
+//   b: 42,
+//   c: false
+// }
+
+// console.log(Object.keys(object1))
+// // Expected output: Array ["a", "b", "c"]
+
+// const arr = ['a', 'b', 'c']
+// console.log(Object.keys(arr)) // ['0', '1', '2']
+
+// // Object.preventExtensions()
+// const object1 = {}
+
+// Object.preventExtensions(object1)
+
+// try {
+//   Object.defineProperty(object1, 'property1', {
+//     value: 42
+//   })
+// } catch (e) {
+//   console.log(e)
+//   // Expected output: TypeError: Cannot define property property1, object is not extensible
+// }
+
+// // Object.seal()
+// const object1 = {
+//   property1: 42
+// }
+
+// Object.seal(object1)
+// object1.property1 = 33
+// console.log(object1.property1)
+// // Expected output: 33
+
+// delete object1.property1 // Cannot delete when sealed
+// console.log(object1.property1)
+// // Expected output: 33
